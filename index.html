@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h1>领取柚恩粉丝牌</h1>
+    <table>
+        <tbody>
+            <tr>
+                <td>UID: </td>
+                <td><input type="number" id="uid"></td>
+            </tr>
+            <tr>
+                <td>编号: </td>
+                <td><input type="number" id="fans_no"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" id="action_button" value="领取">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<script>
+    const uidBox = document.getElementById("uid");
+    const fansNoBox = document.getElementById("fans_no");
+    const actionButton = document.getElementById("action_button");
+    actionButton.onclick = function () {
+        uid = parseInt(uidBox.value);
+        fansNo = parseInt(fansNoBox.value);
+        url = "http://114.132.160.2/getCard?uid=" + uid + "&fans_no=" + fansNo;
+        window.open(url, "_blank");
+    }
+</script>
